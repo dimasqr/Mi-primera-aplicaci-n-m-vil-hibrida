@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> DivisApp 24001350 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Conversor de Divisas</ion-card-title>
+      <ion-card-subtitle>Quetzales a Dolares (Q8 = $1)</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Cantidad en Quetzales (Q)</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="quetzales"
+          placeholder="Ingrese cantidad"
+        ></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="convertir()" class="ion-margin-top">
+        Convertir
+      </ion-button>
+
+      <div
+        *ngIf="dolares !== null"
+        class="resultado ion-margin-top ion-text-center"
+      >
+        <h2>Resultado:</h2>
+        <p class="monto-quetzales">Q {{ quetzales }}</p>
+        <p class="equivale">=</p>
+        <p class="monto-dolares">${{ dolares }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
